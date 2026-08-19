@@ -1,0 +1,355 @@
+---
+import Layout from '../layouts/Layout.astro';
+import JsonToExcel from '../components/JsonToExcel.jsx';
+
+const ogImageUrl = "https://res.cloudinary.com/dpx6w78bt/image/upload/f_auto/q_auto/v1786342039/Online_Tool_rc1ybr.png";
+const canonicalUrl = "https://json2excel.github.io/";
+
+const structuredDataGraph = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://json2excel.github.io/#webapp",
+      "url": "https://json2excel.github.io/",
+      "name": "JSON to Excel Converter",
+      "alternateName": ["JSON2Excel", "JSON to XLSX Online Converter"],
+      "description": "Free, secure, and client-side web utility to convert raw JSON and .json files directly to formatted Microsoft Excel (.xlsx) spreadsheets without server uploads.",
+      "applicationCategory": "DeveloperApplication, BusinessApplication",
+      "operatingSystem": "Any (Modern Web Browser)",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "softwareVersion": "1.0.0",
+      "screenshot": ogImageUrl,
+      "image": ogImageUrl,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "featureList": [
+        "100% Client-Side Local In-Browser Processing",
+        "Nested Object and Array Flattening",
+        "Real-time JSON Syntax Error Validation",
+        "Spreadsheet Live Column and Row Preview",
+        "Native .xlsx Excel Workbook Generation with Auto-Fitted Columns",
+        "Drag and Drop .json File Upload"
+      ],
+      "creator": {
+        "@type": "Organization",
+        "name": "JSON2Excel",
+        "url": "https://json2excel.github.io/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://json2excel.github.io/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://json2excel.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "JSON to Excel Converter",
+          "item": "https://json2excel.github.io/"
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://json2excel.github.io/#howto",
+      "name": "How to Convert JSON to Excel (.xlsx)",
+      "description": "Step-by-step tutorial to convert JSON data or .json files into an Excel spreadsheet directly in your browser.",
+      "image": ogImageUrl,
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Input JSON Data",
+          "text": "Paste your raw JSON code into the editor or drag-and-drop a .json file from your computer.",
+          "url": "https://json2excel.github.io/#step-1"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Configure Options",
+          "text": "Toggle the 'Flatten nested objects' option if your data contains deep hierarchies to convert nested keys like user.name into user_name.",
+          "url": "https://json2excel.github.io/#step-2"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Preview Columns",
+          "text": "Preview the live column structure, row counts, and data types in the interactive verification table before saving.",
+          "url": "https://json2excel.github.io/#step-3"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Download Excel Spreadsheet",
+          "text": "Click 'Download Excel (.xlsx)' to trigger an immediate in-memory generation and browser download of your formatted spreadsheet.",
+          "url": "https://json2excel.github.io/#step-4"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://json2excel.github.io/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is my data uploaded to any server or cloud database?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. This tool operates 100% locally within your browser using modern client-side JavaScript. No cookies, no trackers, and zero network calls are made with your data. You can even disconnect your internet connection once the page loads and continue converting files."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How are deeply nested JSON objects handled?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When the 'Flatten nested objects' option is turned on, nested properties are recursively flattened into concatenated underscore column headers (e.g. user.address.city becomes user_address_city). Arrays of primitives are neatly joined with commas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between this and a CSV export?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CSV files are plain text with comma delimiters, which often corrupt text containing commas or special characters and lack automatic column formatting. This tool outputs a native binary .xlsx file with calculated auto-fitted column widths ready for Excel, Google Sheets, or Apple Numbers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there any limit on file size or row count?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Since processing occurs in your local browser memory, you can easily parse thousands of records and files up to tens of megabytes depending on your computer's RAM."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<Layout
+  title="JSON to Excel Converter | Free, Private & Instant"
+  description="Securely convert JSON files and raw JSON data to Microsoft Excel (.xlsx) spreadsheets. 100% free, runs entirely in your browser with no server uploads."
+  canonicalUrl={canonicalUrl}
+  ogImage={ogImageUrl}
+>
+  <Fragment slot="head">
+    <!-- Comprehensive Schema.org JSON-LD Graph -->
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(structuredDataGraph)} />
+  </Fragment>
+
+  <div class="max-w-5xl mx-auto px-3.5 sm:px-6 lg:px-8 py-8 sm:py-14 space-y-12 sm:space-y-16">
+    <!-- Hero Section -->
+    <section class="text-center space-y-4 sm:space-y-5" aria-labelledby="main-heading">
+      <h1 id="main-heading" class="text-2xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+        Convert JSON to <span class="text-emerald-600 underline decoration-emerald-300 decoration-wavy underline-offset-4 sm:underline-offset-8">Excel</span> (.xlsx)
+      </h1>
+
+      <p class="max-w-2xl mx-auto text-xs sm:text-base md:text-lg text-slate-600 leading-relaxed">
+        Transform raw JSON payloads, API responses, and <code class="text-slate-800 font-mono text-xs sm:text-sm bg-slate-100 px-1.5 py-0.5 rounded border border-slate-200">.json</code> files into clean, auto-formatted Microsoft Excel spreadsheets directly inside your browser.
+      </p>
+    </section>
+
+    <!-- Main Interactive React App Island -->
+    <section aria-label="JSON to Excel Tool Interface">
+      <JsonToExcel client:load />
+    </section>
+
+    <!-- How to Convert Step-by-Step Guide Section -->
+    <section class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-8 md:p-10 shadow-sm" aria-labelledby="tutorial-heading">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-50 text-emerald-700 text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2 sm:mb-3">
+          Step-by-Step Tutorial
+        </div>
+        <h2 id="tutorial-heading" class="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">
+          How to Convert JSON to Excel (.xlsx)
+        </h2>
+        <p class="text-slate-600 mt-1.5 sm:mt-2 text-xs sm:text-sm md:text-base">
+          Follow these 4 effortless steps to convert your structured JSON data into an Excel spreadsheet in seconds:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-6 sm:mt-8">
+        <div id="step-1" class="p-4 sm:p-5 rounded-xl bg-slate-50 border border-slate-200/80 flex flex-col justify-between group hover:border-emerald-300 transition-colors">
+          <div>
+            <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-emerald-600 text-white font-bold flex items-center justify-center text-xs sm:text-sm shadow-sm mb-3 sm:mb-4" aria-hidden="true">
+              1
+            </div>
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base mb-1">Input JSON Data</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Paste your raw JSON code into the editor or drag-and-drop a <code class="text-xs font-mono bg-white px-1 py-0.5 rounded border border-slate-200">.json</code> file from your device.
+            </p>
+          </div>
+        </div>
+
+        <div id="step-2" class="p-4 sm:p-5 rounded-xl bg-slate-50 border border-slate-200/80 flex flex-col justify-between group hover:border-emerald-300 transition-colors">
+          <div>
+            <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-emerald-600 text-white font-bold flex items-center justify-center text-xs sm:text-sm shadow-sm mb-3 sm:mb-4" aria-hidden="true">
+              2
+            </div>
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base mb-1">Configure Options</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Toggle the <strong>'Flatten nested objects'</strong> option if your data contains deep hierarchies (e.g. <code class="text-xs font-mono bg-white px-1 py-0.5 rounded border border-slate-200">user.name</code> &rarr; <code class="text-xs font-mono bg-white px-1 py-0.5 rounded border border-slate-200">user_name</code>).
+            </p>
+          </div>
+        </div>
+
+        <div id="step-3" class="p-4 sm:p-5 rounded-xl bg-slate-50 border border-slate-200/80 flex flex-col justify-between group hover:border-emerald-300 transition-colors">
+          <div>
+            <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-emerald-600 text-white font-bold flex items-center justify-center text-xs sm:text-sm shadow-sm mb-3 sm:mb-4" aria-hidden="true">
+              3
+            </div>
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base mb-1">Preview Columns</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Preview the live column structure, row counts, and data types in the interactive verification table before saving.
+            </p>
+          </div>
+        </div>
+
+        <div id="step-4" class="p-4 sm:p-5 rounded-xl bg-slate-50 border border-slate-200/80 flex flex-col justify-between group hover:border-emerald-300 transition-colors">
+          <div>
+            <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-emerald-600 text-white font-bold flex items-center justify-center text-xs sm:text-sm shadow-sm mb-3 sm:mb-4" aria-hidden="true">
+              4
+            </div>
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base mb-1">Download .xlsx</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Click <strong>'Download Excel'</strong> to trigger an immediate in-memory generation and browser download of your formatted spreadsheet.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Our Data Converter Feature Grid Section -->
+    <section class="space-y-6 sm:space-y-8" aria-labelledby="features-heading">
+      <div class="text-center max-w-2xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-50 text-emerald-700 text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2 sm:mb-3">
+          Key Advantages
+        </div>
+        <h2 id="features-heading" class="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">
+          Why Choose Our Data Converter?
+        </h2>
+        <p class="text-slate-600 mt-1.5 sm:mt-2 text-xs sm:text-sm md:text-base">
+          Built specifically for developers, data analysts, and privacy-conscious teams requiring fast, reliable file conversions.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+        <!-- Feature 1 -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-4 sm:mb-5 border border-blue-100">
+              <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-1.5">Total Data Privacy</h3>
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+              Ideal for API dumps containing PII, customer records, or financial data. Everything is processed via client-side JavaScript in your browser with zero network transmission.
+            </p>
+          </div>
+          <div class="mt-4 pt-3.5 border-t border-slate-100 text-xs font-medium text-blue-700 flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-blue-600" aria-hidden="true"></span>
+            Zero Server Logs or Storage
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 sm:mb-5 border border-emerald-100">
+              <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="8" y1="13" x2="16" y2="13"></line>
+                <line x1="8" y1="17" x2="16" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+            <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-1.5">True .xlsx Format</h3>
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+              Generates genuine binary Microsoft Excel (<code class="text-xs font-mono bg-slate-100 px-1 py-0.5 rounded">.xlsx</code>) OpenXML workbooks with proper column widths, not simple unformatted CSV text.
+            </p>
+          </div>
+          <div class="mt-4 pt-3.5 border-t border-slate-100 text-xs font-medium text-emerald-700 flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600" aria-hidden="true"></span>
+            Excel 2007+ Compatible
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mb-4 sm:mb-5 border border-amber-100">
+              <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-1.5">Lightning Fast</h3>
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+              Handles large JSON arrays and nested structures instantly. Because processing occurs directly in browser memory, there are zero network upload or download wait queues.
+            </p>
+          </div>
+          <div class="mt-4 pt-3.5 border-t border-slate-100 text-xs font-medium text-amber-700 flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-600" aria-hidden="true"></span>
+            Instant In-Memory Rendering
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section for SEO Richness -->
+    <section class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-8 md:p-10 shadow-sm space-y-6" aria-labelledby="faq-heading">
+      <div class="max-w-3xl">
+        <h2 id="faq-heading" class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-slate-600 mt-1 text-xs sm:text-sm">
+          Everything you need to know about converting JSON datasets to Excel spreadsheets.
+        </p>
+      </div>
+
+      <div class="divide-y divide-slate-200 space-y-4 pt-2">
+        <div class="pt-4 first:pt-0">
+          <h3 class="text-sm sm:text-base font-semibold text-slate-900">Is my data uploaded to any server or cloud database?</h3>
+          <p class="mt-1 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            No. This tool operates 100% locally within your browser using modern client-side JavaScript. No cookies, no trackers, and zero network calls are made with your data. You can even disconnect your internet connection once the page loads and continue converting files.
+          </p>
+        </div>
+
+        <div class="pt-4">
+          <h3 class="text-sm sm:text-base font-semibold text-slate-900">How are deeply nested JSON objects handled?</h3>
+          <p class="mt-1 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            When the "Flatten nested objects" option is turned on, nested properties are recursively flattened into concatenated underscore column headers (e.g. <code class="text-xs font-mono bg-slate-100 px-1 py-0.5 rounded">user.address.city</code> becomes <code class="text-xs font-mono bg-slate-100 px-1 py-0.5 rounded">user_address_city</code>). Arrays of primitives are neatly joined with commas.
+          </p>
+        </div>
+
+        <div class="pt-4">
+          <h3 class="text-sm sm:text-base font-semibold text-slate-900">What is the difference between this and a CSV export?</h3>
+          <p class="mt-1 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            CSV files are plain text with comma delimiters, which often corrupt text containing commas or special characters and lack automatic column formatting. This tool outputs a native binary <code class="text-xs font-mono bg-slate-100 px-1 py-0.5 rounded">.xlsx</code> file with calculated auto-fitted column widths ready for Excel, Google Sheets, or Apple Numbers.
+          </p>
+        </div>
+
+        <div class="pt-4">
+          <h3 class="text-sm sm:text-base font-semibold text-slate-900">Is there any limit on file size or row count?</h3>
+          <p class="mt-1 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Since processing occurs in your local browser memory, you can easily parse thousands of records and files up to tens of megabytes depending on your computer's RAM.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

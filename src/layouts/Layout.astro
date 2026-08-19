@@ -1,0 +1,185 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+}
+
+const {
+  title = "JSON to Excel Converter | Free, Private & Instant",
+  description = "Securely convert JSON files and raw JSON data to Microsoft Excel (.xlsx) spreadsheets. 100% free, runs entirely in your browser with no server uploads.",
+  canonicalUrl = "https://json2excel.github.io/",
+  ogImage = "https://res.cloudinary.com/dpx6w78bt/image/upload/f_auto/q_auto/v1786342039/Online_Tool_rc1ybr.png",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="h-full bg-slate-50 antialiased" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google tag (gtag.js) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-1TEL65DGP9"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-1TEL65DGP9');
+    </script>
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="json to excel, json to xlsx, convert json to excel, json converter, json spreadsheet, in-browser json to excel, free json to excel online, client-side json converter, json to sheet" />
+    <meta name="author" content="JSON2Excel" />
+    <meta name="publisher" content="JSON2Excel" />
+    <meta name="application-name" content="JSON2Excel" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Mobile & PWA Tags -->
+    <meta name="theme-color" content="#059669" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="JSON2Excel" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content="JSON to Excel Converter" />
+    <meta property="og:title" content="In-Browser JSON to Excel Converter" />
+    <meta property="og:description" content="Transform complex JSON data into clean Excel spreadsheets instantly. Your sensitive data never leaves your device." />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:secure_url" content={ogImage} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="JSON to Excel Converter Online Tool Preview" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalUrl} />
+    <meta name="twitter:title" content="In-Browser JSON to Excel Converter" />
+    <meta name="twitter:description" content="Transform complex JSON data into clean Excel spreadsheets instantly. Your sensitive data never leaves your device." />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content="JSON to Excel Converter Online Tool Preview" />
+
+    <!-- Resource Preconnects -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://res.cloudinary.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+    <slot name="head" />
+  </head>
+  <body class="min-h-full flex flex-col bg-slate-50 text-slate-900 font-sans" itemscope itemtype="https://schema.org/WebPage">
+    <!-- Navigation / Header -->
+    <header class="border-b border-slate-200 bg-white/90 backdrop-blur-md sticky top-0 z-40" role="banner">
+      <div class="max-w-5xl mx-auto px-3.5 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2">
+        <a href="/" class="flex items-center gap-2.5 sm:gap-3 group shrink-0" aria-label="JSON2Excel Home">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-emerald-600 flex items-center justify-center text-white shadow-md shadow-emerald-600/20 group-hover:scale-105 transition-transform duration-200">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="8" y1="13" x2="16" y2="13"></line>
+              <line x1="8" y1="17" x2="16" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+          </div>
+          <div>
+            <span class="font-bold text-slate-900 text-base sm:text-lg tracking-tight block">JSON<span class="text-emerald-600">2</span>Excel</span>
+            <span class="text-[10px] sm:text-xs text-slate-500 font-medium block -mt-1">In-Browser Utility</span>
+          </div>
+        </a>
+
+        <div class="flex items-center gap-2">
+          <a
+            href="https://buymeacoffee.com/kisharadilz"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs sm:text-sm font-semibold bg-amber-50 text-amber-900 border border-amber-200 hover:bg-amber-100 hover:border-amber-300 shadow-xs transition-all duration-200 group active:scale-95 shrink-0"
+            aria-label="Support the Developer on Buy Me a Coffee"
+          >
+            <span class="text-sm sm:text-base group-hover:scale-110 transition-transform" aria-hidden="true">☕</span>
+            <span class="hidden sm:inline">Support the Developer</span>
+            <span class="sm:hidden">Support</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow" role="main" itemprop="mainContentOfPage">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto border-t border-slate-200 bg-white" role="contentinfo">
+      <div class="max-w-5xl mx-auto px-3.5 sm:px-6 lg:px-8 py-8 sm:py-10">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-center sm:text-left">
+            <div class="flex items-center gap-2">
+              <div class="w-6 h-6 rounded-lg bg-emerald-600 flex items-center justify-center text-white text-xs font-bold" aria-hidden="true">
+                J
+              </div>
+              <span class="font-bold text-slate-800 tracking-tight">JSON2Excel</span>
+            </div>
+            <span class="hidden sm:inline text-slate-300">|</span>
+            <p class="text-xs sm:text-sm text-slate-600">
+              Open Source under MIT License.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+            <a
+              href="https://buymeacoffee.com/kisharadilz"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-3.5 py-2 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-semibold bg-amber-50 text-amber-900 border border-amber-200 hover:bg-amber-100 hover:border-amber-300 shadow-sm transition-all duration-200 group active:scale-95"
+              aria-label="Tip the developer on Buy Me a Coffee"
+            >
+              <span class="text-base group-hover:scale-110 transition-transform" aria-hidden="true">☕</span>
+              <span>Tip the developer</span>
+            </a>
+
+            <a
+              href="https://github.com/json2excel/json2excel.github.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs sm:text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors"
+              aria-label="Visit GitHub repository"
+            >
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path>
+              </svg>
+              <span>GitHub</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-[11px] sm:text-xs text-slate-500 text-center sm:text-left">
+          <p>© {new Date().getFullYear()} json2excel.github.io — Fast, Secure & In-Browser Data Converter.</p>
+          <div class="flex items-center gap-4 sm:gap-6">
+            <span>No data leaves your computer</span>
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500" aria-hidden="true"></span>
+            <span>Zero Server Footprint</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

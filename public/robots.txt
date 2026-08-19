@@ -1,0 +1,6 @@
+# robots.txt for https://json2excel.github.io/
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://json2excel.github.io/sitemap.xml
